@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Money Tracker</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+
+
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="#" id="aboutLink">About</a>
+        </div>
+    </nav>
+    <div class="about-tab" id="aboutTab">
+        <div class="about-content">
+            <h2>About</h2>
+            <p>This website is designed to track money transactions. For any queries, contact us at:</p>
+            <p>Email: prateekchauhan923@gmail.com</p>
+            <p>Phone: +91 7219733874</p>
+            <button class="close-btn" id="closeBtn">Close</button>
+        </div>
+    </div>
+    
+
+<h1>Money Tracker</h1>
+
+
+
+<div class="toggle-container">
+    <input type="checkbox" id="darkModeToggle">
+    <label for="darkModeToggle" class="toggle-label"></label>
+</div>
+<form id="moneyForm">
+    <label for="receiverName">Receiver Name:</label>
+    <input type="text" id="receiverName" required>
+    <label for="amount">Amount Given:</label>
+    <input type="number" id="amount" required pattern="\d+(\.\d{1,2})?" title="Please enter a valid amount" required>
+    <label for="amountReturned">Amount Returned by User:</label>
+    <input type="number" id="amountReturned" required pattern="\d+(\.\d{1,2})?" title="Please enter a valid amount" required>
+    <button type="submit">Add Entry</button>
+</form>
+<table>
+    <thead>
+        <tr>
+            <th>Receiver Name</th>
+            <th>Amount Given</th>
+            <th>Amount Returned by Receiver</th>
+            <th>Amount Returned by User</th>
+            <th>Remaining Amount</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="moneyTableBody"></tbody>
+    <tfoot id="moneyTableFooter">
+        <tr>
+            <td colspan="5">Total Amount given:</td>
+            <td id="totalRemaining"></td>
+        </tr>
+    </tfoot>
+</table>
+<div class="settings-logo" onclick="deleteAllEntries()">
+    <button>Delete table</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
